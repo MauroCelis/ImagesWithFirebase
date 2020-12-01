@@ -1,0 +1,20 @@
+<!--<form (ngSubmit)="agregar()">-->
+<form>
+    <input 
+    type="text" placeholder="Ingresa tu nombre" 
+    name="name" class="form-control"
+    [(ngModel)]="item.name"
+    >
+    <div class="form-group">
+        <h5>Seleccionar imagen:</h5>
+        <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+
+    </div>
+    <ng-template>
+
+    </ng-template>
+   <button class="btn btn-warning mt-3" type="submit">Agregar</button>
+</form>
+
+<input type="text" [value]="urlImage | async">
+<img src="https://firebasestorage.googleapis.com/v0/b/kuinbi-cejdjm.appspot.com/o/upload%2Fimagen2.png?alt=media&token=38e45f6a-05fe-428b-8275-eb2df5b59eb4">

@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AngularFirestore} from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
+import { ListaComponent } from './components/lista/lista.component';
+import { ListaAddComponent } from './components/lista-add/lista-add.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  items:Observable<any[]>;
+  constructor(db:AngularFirestore){
+    this.items=db.collection('items').valueChanges();
+  }
+ 
   title = 'firebaseCurse';
 }
